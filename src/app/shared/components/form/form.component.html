@@ -1,0 +1,35 @@
+<form class="simple-form" [formGroup]="form">
+  <h1>{{ name }}</h1>
+  <div *ngFor="let field of fields">
+    <label>{{ field.label }} </label>
+
+    <input
+      *ngIf="field.type === 'text'"
+      [type]="field.type"
+      [placeholder]="field.placeholder"
+      [formControlName]="field.key"
+    />
+
+    <input
+      *ngIf="field.type === 'date'"
+      [type]="field.type"
+      [placeholder]="field.placeholder"
+      [formControlName]="field.key"
+    />
+    <!-- Select Dropdown -->
+    <select *ngIf="field.type === 'select'" [formControlName]="field.key">
+      <option value="">SELECT</option>
+      <option *ngFor="let opt of dropdownOptions" [value]="opt.value">
+        {{ opt.label }}
+      </option>
+    </select>
+
+    <!-- <select *ngIf="field.type === 'select'" [formControlName]="field.key">
+      <option *ngFor="let opt of projectOptions" [value]="opt.value">
+        {{ opt.label }}
+      </option>
+    </select> -->
+  </div>
+
+  <button type="submit" (click)="onSubmit()">Submit</button>
+</form>

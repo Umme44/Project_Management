@@ -1,0 +1,14 @@
+.simple-form {
+  width: 100%;
+  display: flex; /* make it a flexbox */
+  flex-direction: column; /* stack elements vertically */
+  gap: 20px; /* add spacing between them */
+
+  max-width: 400px;
+  margin: 40px auto;
+  background: #ffffff;
+  padding: 20px 25px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
+}

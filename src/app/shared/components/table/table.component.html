@@ -1,0 +1,9 @@
+<p>table works!</p>
+
+<table *ngIf="projects?.length" cellpadding="5" cellspacing="0">
+  <thead>
+    <tr>
+      <th *ngFor="let col of columns">{{ col }}</th>
+    </tr>
+  </thead>
+</table>
