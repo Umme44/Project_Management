@@ -32,7 +32,6 @@ export class ListComponent implements OnInit {
 
     this.projectService.getProjects().subscribe({
       next: (res: any) => {
-        console.log('Projects ::::', res);
         this.projects.push({
           rows: res.data[0],
           columns: res.data.length,
